@@ -77,6 +77,45 @@
                 </table>
             </div>
         </main>
+        <footer class="clinical-disclaimer">
+            <div class="legal-warning">
+                <strong>Important:</strong> This is a program to calculate volumes of fluids to be given to neonates for specified rates of GIR. Made for a particular setting for my hospital and may not be widely deployable. This tool is for educational/reference purposes, and does not replace clinical judgement. I assume no liability for any clinical outcome.
+            </div>
+
+            <h4>Assumptions:</h4>
+            <ol>
+                <li>Complete fluid requirement is to be fulfilled via IV route.</li>
+                <li>Potassium required is 1mEq/kg/day after day 2.</li>
+                <li>Calcium is not added.</li>
+                <li>Sodium correction (N/5) after day 2.</li>
+                <li>Fluid requirements are taken as per the table:</li>
+            </ol>
+
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Day of Life</th>
+                        <th>Term (mL/kg/day)</th>
+                        <th>Preterm (mL/kg/day)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Day 1</strong></td><td>60</td><td>80</td></tr>
+                    <tr><td><strong>Day 2</strong></td><td>80</td><td>100</td></tr>
+                    <tr><td><strong>Day 3</strong></td><td>100</td><td>120</td></tr>
+                    <tr><td><strong>Day 4</strong></td><td>120</td><td>140</td></tr>
+                    <tr><td><strong>Day 5+</strong></td><td>150</td><td>160</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Limitations:</h4>
+            <ol>
+                <li>Doesn't account for oral feeds.</li>
+                <li>Small volumes of KCl (&lt;0.5 ml) are ignored in 60 ml syringe formulation (Multiply manually as necessary from the KCl value in the hourly table).</li>
+                <li>Intentionally limits GIR to 4 - 12 mg/kg/min.</li>
+                <li>Not applicable to situations where the glucose concentration of fluid is &lt;50mg/ml or &gt;250mg/ml.</li>
+            </ol>
+        </footer>
     </div>
 
     <script src="app.js"></script>
