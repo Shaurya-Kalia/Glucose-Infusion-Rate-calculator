@@ -1,5 +1,5 @@
 # Important
-This is a program to calculate volumes of fluids to be given to neonates for specified rates of GIR. Made for particular setting for my hospital and may not be widely deployable. 
+This is a program to calculate volumes of fluids to be given to neonates for specified rates of GIR. Made for particular setting for my hospital and may not be widely deployable. This tool is for educational/reference purposes, and does not replace clinical judgment. I assume no liability in case of any injury, handicap or death.
 
 ## Assumptions:
 1. Complete fluid requirement is to be fulfilled via IV route.
