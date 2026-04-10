@@ -7,26 +7,82 @@
     
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0056b3">
-    
     <link rel="apple-touch-icon" href="icons/icon-192.png">
     <meta name="apple-mobile-web-app-status-bar" content="#0056b3">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app-container">
-        <h1>GIR Calculator</h1>
-        <p>Calculator UI will go here.</p>
+    <div class="container">
+        <header>
+            <h1>GIR Calculator</h1>
+        </header>
+
+        <main>
+            <form id="calc-form">
+                <div class="input-group">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" step="0.01" min="0.1" required inputmode="decimal">
+                </div>
+
+                <div class="input-group">
+                    <label for="age">Day of Life</label>
+                    <select id="age" required>
+                        <option value="1">Day 1</option>
+                        <option value="2">Day 2</option>
+                        <option value="3">Day 3</option>
+                        <option value="4">Day 4</option>
+                        <option value="5">Day 5 or greater</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="gestation">Gestation</label>
+                    <select id="gestation" required>
+                        <option value="term">Term</option>
+                        <option value="preterm">Preterm</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="gir">Target GIR (mg/kg/min)</label>
+                    <input type="number" id="gir" step="0.1" min="0.1" required inputmode="decimal">
+                </div>
+
+                <button type="submit" id="calculate-btn">Calculate Fluids</button>
+            </form>
+
+            <div id="results" class="hidden">
+                <h2>Total Rate: <span id="out-rate">0</span> mL/hr</h2>
+                
+                <h3>Hourly Infusion (mL)</h3>
+                <table>
+                    <tr><th>Component</th><th>Volume</th></tr>
+                    <tr><td>Dextrose 5%</td><td id="out-h-d5">0</td></tr>
+                    <tr><td>Dextrose 10%</td><td id="out-h-d10">0</td></tr>
+                    <tr><td>Dextrose 25%</td><td id="out-h-d25">0</td></tr>
+                    <tr><td>1/5 Normal Saline</td><td id="out-h-ns">0</td></tr>
+                    <tr><td>KCl (2mEq/mL)</td><td id="out-h-kcl">0</td></tr>
+                </table>
+
+                <h3>60 mL Syringe Prep (mL)</h3>
+                <table>
+                    <tr><th>Component</th><th>Volume</th></tr>
+                    <tr><td>Dextrose 5%</td><td id="out-s-d5">0</td></tr>
+                    <tr><td>Dextrose 10%</td><td id="out-s-d10">0</td></tr>
+                    <tr><td>Dextrose 25%</td><td id="out-s-d25">0</td></tr>
+                    <tr><td>1/5 Normal Saline</td><td id="out-s-ns">0</td></tr>
+                    <tr><td>KCl (2mEq/mL)</td><td id="out-s-kcl">0</td></tr>
+                </table>
+            </div>
+        </main>
     </div>
 
     <script src="app.js"></script>
     <script>
-        // Register the Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('Service Worker Registered'))
-                    .catch(err => console.error('Service Worker Error', err));
+                navigator.serviceWorker.register('./sw.js').catch(err => console.error(err));
             });
         }
     </script>
