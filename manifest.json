@@ -1,0 +1,21 @@
+{
+  "name": "Neonatal GIR Calculator",
+  "short_name": "GIR Calc",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0056b3",
+  "description": "Calculate Glucose Infusion Rates and fluid mixing for neonates.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
