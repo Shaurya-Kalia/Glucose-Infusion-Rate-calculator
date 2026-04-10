@@ -131,3 +131,31 @@ th {
     background-color: var(--table-header-bg);
     color: var(--text-color);
 }
+
+.clinical-disclaimer ol {
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+}
+
+.clinical-disclaimer li {
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+
+.reference-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 25px 0;
+    font-size: 13px;
+}
+
+.reference-table th, .reference-table td {
+    padding: 8px;
+    border: 1px solid var(--table-border);
+    text-align: center;
+}
+
+.reference-table th {
+    background-color: var(--table-header-bg);
+    color: var(--text-color);
+}
