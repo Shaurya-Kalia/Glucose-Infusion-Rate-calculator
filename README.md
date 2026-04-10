@@ -19,5 +19,5 @@ This is a program to calculate volumes of fluids to be given to neonates for spe
 ## Limitations:
 1. Doesn't account for oral feeds.
 2. Small volumes of KCl (<0.5 ml) are ignored in 60 ml syringe formulation (Multiply manually as necessary from the KCl value in hourly table).
-3. Intentionally limits GIR to 4 - 8 mg/kg/min
+3. Intentionally limits GIR to 4 - 12 mg/kg/min
 4. Not applicable to situations where glucose concentration of fluid is <50mg/ml or >250/mg/ml
