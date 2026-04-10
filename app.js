@@ -35,18 +35,22 @@ function calculateFluids(weight, ageDays, isTerm, targetGIR) {
     }
 
     const roundToHalf = (num) => Math.round(num * 2) / 2;
+    const formatExact = (num) => Number(num.toFixed(2)); // Keeps 2 decimals for precision
+
     const scaleFactor = 60 / totalHourlyVol;
 
     return {
-        ratePerHour: roundToHalf(totalHourlyVol),
+        ratePerHour: formatExact(totalHourlyVol),
         hourly: {
-            d5: Math.max(0, roundToHalf(d5Hourly)),
-            d10: Math.max(0, roundToHalf(d10Hourly)),
-            d25: Math.max(0, roundToHalf(d25Hourly)),
-            ns: roundToHalf(nsHourly),
-            kcl: roundToHalf(kclHourly)
+            // Unrounded (exact to 2 decimals) for the hourly drip
+            d5: Math.max(0, formatExact(d5Hourly)),
+            d10: Math.max(0, formatExact(d10Hourly)),
+            d25: Math.max(0, formatExact(d25Hourly)),
+            ns: formatExact(nsHourly),
+            kcl: formatExact(kclHourly)
         },
         syringe60: {
+            // Rounded to nearest 0.5mL for manual syringe drawing
             d5: Math.max(0, roundToHalf(d5Hourly * scaleFactor)),
             d10: Math.max(0, roundToHalf(d10Hourly * scaleFactor)),
             d25: Math.max(0, roundToHalf(d25Hourly * scaleFactor)),
